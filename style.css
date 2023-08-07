@@ -1,0 +1,55 @@
+/* Apply box shadow on main container */
+.cmn-box-shadow{
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+    transition: .5s;
+}
+.main-container:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* style and animation for Dynamic toast message */
+.my-toast{
+    z-index: 999;
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    padding: 15px 20px;
+    background-color: #4DD637;
+    color: #fff;
+    text-shadow: 3px 4px 7px rgba(81,67,21,0.8);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-weight: bold;
+}
+.animation-in{
+    animation: animationin 1.7s ease-out;
+}
+.animation-out{
+    animation: animationout .5s ease-in;
+}
+
+@keyframes animationin {
+    0%{
+        right: -100px;
+        opacity: 0;
+    }
+    50%{
+        right: 100px;
+        opacity: .8;
+    }
+    100%{
+        right: 100px;
+        opacity: 1;
+    }
+}
+@keyframes animationout {
+    from{
+        right: 100px;
+        opacity: 1;
+    }
+    to{
+        right: -100px;
+        opacity: 0;
+    }
+}

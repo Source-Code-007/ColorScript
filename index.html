@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorScript</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flex justify-center items-start bg-slate-200" style="min-height:100vh;">
+        <section class=" w-4/5 lg:w-3/5 xl:w-2/5 mt-5 bg-slate-50 p-5 rounded-md main-container cmn-box-shadow">
+
+            <!-- Display -->
+            <div class="display-color">
+                <div class="flex justify-between pb-2">
+                    <div class="display-color-title">
+                        <h2 class="font-bold text-xl">Display Color</h2>
+                    </div>
+                    <button class="text-red-500 font-bold" id="randomColorBtn">Random Color</button>
+                </div>
+                <hr class="bg-slate-500">
+                <div class="h-24 rounded cmn-box-shadow my-5" id="bgDisplay"></div>
+            </div>
+
+            <!-- change & copy color -->
+            <div class="change-and-copy-color flex justify-between pb-2">
+                <div class="change-color-title">
+                    <h2 class="font-bold text-xl">change and copy color</h2>
+                </div>
+                <div class="flex flex-col md:flex-row gap-3">
+                    <button class="text-green-500 font-bold" id="saveColorBtn">Save</button>
+                    <button class="text-red-500 font-bold" id="hexRgbCopyBtn">Copy color</button>
+                </div>
+            </div>
+            <hr class="bg-slate-500">
+
+            <!-- copy mode radio button -->
+            <div class="select-copy-mode flex justify-between my-3">
+                <div class="select-copy-mode-title">
+                    <h2 class="font-bold text-xl"> Select copy mode</h2>
+                </div>
+                <div class="select-copy-radio-group flex flex-col md:flex-row justify-between items-center gap-5">
+                    <div class="hex-radio-parent">
+                        <input type="radio" name="copyColorMode" value="hex" id="hex-radio" checked>
+                        <label for="hex-radio" class="font-bold select-none">HEX</label>
+                    </div>
+                    <div class="rgb-radio-parent">
+                        <input type="radio" name="copyColorMode" value="rgb" id="rgb-radio">
+                        <label for="rgb-radio" class="font-bold select-none">RGB</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- copy HEX and RGB code -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <div class="input-group w-full flex-1 relative">
+                    <label class="font-bold block" for="hexInput">HEX</label>
+                    <div class=" bg-slate-400 text-white font-bold absolute p-[12.7px] rounded-l-sm">#</div>
+                    <input type="text"
+                        class="cursor-pointer block w-full bg-white py-3 px-5 border rounded pl-12 focus:outline-none cmn-box-shadow"
+                        value="000000" id="hexInput">
+                </div>
+                <div class="input-group w-full flex-1">
+                    <label class="font-bold block" for="rgbInput">RGB</label>
+                    <input type="text"
+                        class="cursor-pointer block w-full bg-white  py-3 px-5 border rounded focus:outline-none cmn-box-shadow"
+                        value="rgb(255,255,255)" id="rgbInput" disabled>
+                </div>
+            </div>
+
+            <!-- Adjust RGB colors/RGB range -->
+            <div class="rgb-range py-3 space-y-3">
+                <h2 class="font-bold text-xl">Adjust RGB colors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div>
+                        <div class="range-title flex justify-between">
+                            <h2>Color 1</h2>
+                            <p id="randomColor1RangeLabel">0</p>
+                        </div>
+                        <input type="range" class="w-full" min="0" max="255" name="rgbRange" id="randomColor1Range">
+                    </div>
+                    <div>
+                        <div class="range-title flex justify-between">
+                            <h2>Color 2</h2>
+                            <p id="randomColor2RangeLabel">0</p>
+                        </div>
+                        <input type="range" class="w-full " min="0" max="255" name="rgbRange" id="randomColor2Range">
+                    </div>
+                    <div>
+                        <div class="range-title flex justify-between">
+                            <h2>Color 3</h2>
+                            <p id="randomColor3RangeLabel">0</p>
+                        </div>
+                        <input type="range" class="w-full" min="0" max="255" name="rgbRange" id="randomColor3Range">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- preset color -->
+            <div class="preset-color mt-3">
+                <h2 class="font-bold text-xl border-b-2 border-b-red-200 pb-2">Preset color</h2>
+                <div class="preset-boxes grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 flex-wrap p-4">
+                    <!-- <div class="preset-box col-span-2 h-10 bg-red-300 rounded-md"></div> -->
+                </div>
+            </div>
+
+            <!-- Custom color -->
+            <div class="custom-color mt-3">
+                <h2 class="font-bold text-xl border-b-2 border-b-red-200 pb-2">Custom Color</h2>
+                <div class="custom-boxes grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 flex-wrap p-4">
+                    <!-- <div class="preset-box col-span-2 h-10 bg-red-300 rounded-md"></div> -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
